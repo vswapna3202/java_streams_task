@@ -18,7 +18,7 @@ public class Exercise004 {
     }
     public static void findAverageCarPrice() throws IOException {
         // Using streams() API find the average car price (to the nearest whole number) from the list of cars
-        // Output this to the console
+        // Output the resulting double value to the console
         List<Car> cars = MockData.getCars();
 
     }
