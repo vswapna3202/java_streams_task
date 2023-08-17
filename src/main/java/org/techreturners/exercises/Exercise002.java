@@ -12,6 +12,7 @@ public class Exercise002 {
     public static void main(String[] args) throws IOException {
 
         sortPeopleByAge();
+        sortByCarMakeAndYear();
         tenMostExpensiveRedCars();
 
     }
@@ -24,11 +25,23 @@ public class Exercise002 {
 
     }
 
+    public static void sortByCarMakeAndYear() throws IOException {
+        // My list of cars is currently unsorted
+        // Please return the results of the list of cars sorted in:
+        // Alphabetical order of make
+        // Year within each make
+        // Print the results of this to the console
+
+        List<Car> cars = MockData.getCars();
+
+        // write your solution here
+    }
+
 
     public static void tenMostExpensiveRedCars() throws IOException {
         // I've grown to be accustomed to expensive tastes and want to blow some cash on a new car
         // return the top ten most expensive cars from the list
-        // Oh, also it has to be Red!
+        // Oh, also, it has to be Red!
 
         List<Car> cars = MockData.getCars();
 

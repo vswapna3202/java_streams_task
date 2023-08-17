@@ -18,7 +18,7 @@ public class Exercise001 {
 
     public static void filterCars() throws Exception {
         // I'm in the market to buy a new car, and I'm looking for something very particular:
-        // It has to be made in or before 2001, cost 30000 or less and be coloured green.
+        // It has to be made in or before 2001, cost 30000 or less, and be coloured green.
         // I would like the results printed out to the console
         // I have provided you with the list of cars to find these from below:
         List<Car> cars = MockData.getCars();
