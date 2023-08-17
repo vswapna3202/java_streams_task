@@ -14,14 +14,17 @@ public class Exercise004 {
         findAverageCarPrice();
         dataFilteringAndTransformation();
 
-
     }
+
     public static void findAverageCarPrice() throws IOException {
         // Using streams() API find the average car price (to the nearest whole number) from the list of cars
         // Output the resulting double value to the console
         List<Car> cars = MockData.getCars();
 
+        // write your solution here
+
     }
+
     public static void dataFilteringAndTransformation() throws IOException {
         // I would like to do some object transformation and see a list of PersonDTO objects
         // for all people over the age of 65

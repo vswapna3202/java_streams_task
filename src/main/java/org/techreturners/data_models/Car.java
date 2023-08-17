@@ -8,7 +8,7 @@ public record Car(Integer id, String make, String model, String colour, Integer 
                 "id=" + id +
                 ", make='" + make + '\'' +
                 ", model='" + model + '\'' +
-                ", color='" + colour + '\'' +
+                ", colour='" + colour + '\'' +
                 ", year=" + year +
                 ", price=" + price +
                 '}';
