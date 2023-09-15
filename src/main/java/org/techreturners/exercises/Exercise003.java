@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 
 public class Exercise003 {
 
+    public static final int FILTER_YEAR = 1995;
+    public static final int FILTER_PRICE = 20000;
     public static void main(String[] args) throws IOException {
 
         groupByColour();
@@ -22,7 +24,7 @@ public class Exercise003 {
 
         List<Car> cars = MockData.getCars();
         cars.stream()
-            .filter(c -> c.price() < 20000 && c.year() == 1995)
+            .filter(c -> c.price() < FILTER_PRICE && c.year() == FILTER_YEAR)
             .collect(Collectors.groupingBy(Car::colour))
             .forEach((colour, carList) -> {
                     System.out.println("Cars with colour "+colour+" : ");

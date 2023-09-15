@@ -8,13 +8,13 @@ import java.io.IOException;
 import java.util.List;
 
 public class Exercise001 {
-    public static int FILTER_YEAR = 2001;
-    public static int FILTER_PRICE = 30000;
-    public static String FILTER_COLOUR = "Green";
-    public static String FILTER_GENDER = "Male";
-    public static String FILTER_INITIAL_FIRST = "A";
-    public static String FILTER_INITIAL_LAST = "M";
-    public static int FILTER_AGE = 30;
+    public static final int FILTER_YEAR = 2001;
+    public static final int FILTER_PRICE = 30000;
+    public static final String FILTER_COLOUR = "Green";
+    public static final String FILTER_GENDER = "Male";
+    public static final String FILTER_INITIAL_FIRST = "A";
+    public static final String FILTER_INITIAL_LAST = "M";
+    public static final int FILTER_AGE = 30;
 
     public static void main(String[] args) throws Exception {
 
