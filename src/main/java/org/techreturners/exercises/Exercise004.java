@@ -10,6 +10,8 @@ import java.util.List;
 
 public class Exercise004 {
 
+    public static final int FILTER_AGE = 65;
+
     public static void main(String[] args) throws IOException {
 
         findAverageCarPrice();
@@ -37,7 +39,7 @@ public class Exercise004 {
         List<Person> people = MockData.getPeople();
         System.out.println("Person Data Transfer Object for all over 65 is: ");
         people.stream()
-              .filter(p -> p.age() > 65)
+              .filter(p -> p.age() > FILTER_AGE)
               .map(p -> new PersonDTO(p.id(),p.firstName()+" "+p.lastName(),p.age()))
               .toList()
               .forEach(System.out::println);
