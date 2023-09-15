@@ -9,6 +9,8 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Exercise002 {
+    public static final String FILTER_COLOUR = "red";
+    public static final int LIMIT_RECORDS = 10;
 
     public static void main(String[] args) throws IOException {
 
@@ -52,9 +54,9 @@ public class Exercise002 {
         List<Car> cars = MockData.getCars();
         System.out.println("Top 10 Expensive Cars: ");
         cars.stream()
-                .filter(c -> c.colour().equalsIgnoreCase("red"))
+                .filter(c -> c.colour().equalsIgnoreCase(FILTER_COLOUR))
                 .sorted((c1, c2) -> Double.compare(c2.price(), c1.price()))
-                .limit(10)
+                .limit(LIMIT_RECORDS)
                 .toList()
                 .forEach(System.out::println);
     }
