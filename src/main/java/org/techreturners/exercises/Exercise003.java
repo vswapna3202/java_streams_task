@@ -5,6 +5,7 @@ import org.techreturners.mockdata.MockData;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Exercise003 {
 
@@ -20,9 +21,13 @@ public class Exercise003 {
         // Group the results together by their colour and print to the console
 
         List<Car> cars = MockData.getCars();
-
-        // write your solution here
-
+        cars.stream()
+            .filter(c -> c.price() < 20000 && c.year() == 1995)
+            .collect(Collectors.groupingBy(Car::colour))
+            .forEach((colour, carList) -> {
+                    System.out.println("Cars with colour "+colour+" : ");
+                    carList.forEach(System.out::println);
+            });
     }
 }
 
