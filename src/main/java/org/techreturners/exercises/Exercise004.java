@@ -2,6 +2,7 @@ package org.techreturners.exercises;
 
 import org.techreturners.data_models.Car;
 import org.techreturners.data_models.Person;
+import org.techreturners.data_models.PersonDTO;
 import org.techreturners.mockdata.MockData;
 
 import java.io.IOException;
@@ -20,9 +21,11 @@ public class Exercise004 {
         // Using streams() API find the average car price (to the nearest whole number) from the list of cars
         // Output the resulting double value to the console
         List<Car> cars = MockData.getCars();
-
-        // write your solution here
-
+        double averageCarPrice = cars.stream()
+                                     .mapToDouble(Car::price)
+                                     .average()
+                                     .orElse(0);
+        System.out.println("Average Car Price is: "+Math.round(averageCarPrice));
     }
 
     public static void dataFilteringAndTransformation() throws IOException {
@@ -32,9 +35,11 @@ public class Exercise004 {
         // Print the result to the console
 
         List<Person> people = MockData.getPeople();
-
-        // write your solution here
+        System.out.println("Person Data Transfer Object for all over 65 is: ");
+        people.stream()
+              .filter(p -> p.age() > 65)
+              .map(p -> new PersonDTO(p.id(),p.firstName()+" "+p.lastName(),p.age()))
+              .toList()
+              .forEach(System.out::println);
     }
-
-
 }
