@@ -8,6 +8,13 @@ import java.io.IOException;
 import java.util.List;
 
 public class Exercise001 {
+    public static int FILTER_YEAR = 2001;
+    public static int FILTER_PRICE = 30000;
+    public static String FILTER_COLOUR = "Green";
+    public static String FILTER_GENDER = "Male";
+    public static String FILTER_INITIAL_FIRST = "A";
+    public static String FILTER_INITIAL_LAST = "M";
+    public static int FILTER_AGE = 30;
 
     public static void main(String[] args) throws Exception {
 
@@ -22,10 +29,12 @@ public class Exercise001 {
         // I would like the results printed out to the console
         // I have provided you with the list of cars to find these from below:
         List<Car> cars = MockData.getCars();
+        System.out.println("List of cars made in or before 2001, costing 30000 or less "
+                        +"andin colour Green: ");
         cars.stream().
-                filter(c -> c.year() <= 2001
-                        && c.price() <= 30000
-                        && c.colour().equals("Green"))
+                filter(c -> c.year() <= FILTER_YEAR
+                        && c.price() <= FILTER_PRICE
+                        && c.colour().equals(FILTER_COLOUR))
                 .forEach(System.out::println);
     }
 
@@ -36,11 +45,12 @@ public class Exercise001 {
         // Output your result to the console
 
         List<Person> people = MockData.getPeople();
+        System.out.println("Details of all Male, older than 30 and initials A M: ");
         people.stream()
-              .filter(x -> x.gender().equals("Male") &&
-                      x.age() > 30 &&
-                      x.firstName().startsWith("A") &&
-                      x.lastName().startsWith("M"))
+              .filter(x -> x.gender().equals(FILTER_GENDER) &&
+                      x.age() > FILTER_AGE &&
+                      x.firstName().startsWith(FILTER_INITIAL_FIRST) &&
+                      x.lastName().startsWith(FILTER_INITIAL_LAST))
                 .forEach(System.out::println);
     }
 }
